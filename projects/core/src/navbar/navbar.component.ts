@@ -1,0 +1,53 @@
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {RouterLink, RouterLinkActive} from "@angular/router";
+import {NgClass, NgOptimizedImage} from "@angular/common";
+import {IconComponent} from "../icon/icon.component";
+
+@Component({
+  selector: 'lib-navbar',
+  standalone: true,
+  imports: [
+    RouterLink,
+    NgOptimizedImage,
+    NgClass,
+    IconComponent,
+    RouterLinkActive
+  ],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class NavbarComponent {
+  items = [
+    {
+      text: "Dashboard",
+      link: "/dashboard",
+      icon: 'assets/icons/key.svg'
+    },
+    {
+      text: "Product",
+      link: "/product",
+      icon: 'assets/icons/3d.svg'
+    },
+    {
+      text: "Customers",
+      link: "/customers",
+      icon: 'assets/icons/user.svg'
+    },
+    {
+      text: "Income",
+      link: "/income",
+      icon: 'assets/icons/wallet.svg'
+    },
+    {
+      text: "Promote",
+      link: "/promote",
+      icon: 'assets/icons/discount.svg'
+    },
+    {
+      text: "Help",
+      link: "/help",
+      icon: 'assets/icons/question.svg'
+    },
+  ]
+}

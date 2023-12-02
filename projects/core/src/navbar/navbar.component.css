@@ -1,0 +1,40 @@
+.side-menu {
+  width: 306px;
+}
+
+.links__item {
+  color: #9197B3;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+}
+
+.links__item--text{
+  margin-left: 14px;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.14px;
+}
+
+.links__item--icon {
+
+}
+
+.selected {
+  border-radius: 8px;
+  background: #5932EA;
+  color: #fff;
+}
+
+
+.selected {
+  border-radius: 8px;
+  background: #5932EA;
+  color: #fff;
+  fill: #fff;
+}
+
+

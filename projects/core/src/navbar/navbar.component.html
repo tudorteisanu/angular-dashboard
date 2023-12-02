@@ -1,0 +1,22 @@
+<aside class="side-menu">
+  <nav>
+    <ul class="links">
+      @for (item of items; track $index) {
+        <li
+          [routerLink]="item.link"
+          routerLinkActive="selected"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="links__item"
+        >
+          @if(item.icon) {
+            <lib-icon [src]="item.icon" class="links__item--icon" width="24" height="24"/>
+          }
+          <span class="links__item--text">
+         {{item.text}}
+      </span>
+        </li>
+      }
+    </ul>
+  </nav>
+</aside>
+
