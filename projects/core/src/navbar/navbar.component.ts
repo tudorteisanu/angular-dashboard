@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {afterNextRender, ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {NgClass, NgOptimizedImage} from "@angular/common";
 import {IconComponent} from "../icon/icon.component";
@@ -18,6 +18,7 @@ import {IconComponent} from "../icon/icon.component";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
+  displayed = signal(true);
   items = [
     {
       text: "Dashboard",
@@ -50,4 +51,22 @@ export class NavbarComponent {
       icon: 'assets/icons/question.svg'
     },
   ]
+
+  constructor() {
+    afterNextRender(() => {
+      const menuState = localStorage.getItem('menuState')
+
+      if (menuState) {
+        this.displayed.set(JSON.parse(menuState))
+      }
+    })
+  }
+
+  toggle() {
+    this.displayed.update(value => !value);
+  }
+
+  ngOnInit() {
+    console.log('init')
+  }
 }

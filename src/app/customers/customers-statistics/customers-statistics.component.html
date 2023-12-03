@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="statistics">
+    @for (item of statistics; track $index) {
+      <div class="statistics__item">
+        <div class="statistics__item__icon">
+          <lib-icon [src]="item.icon" [width]="42" [height]="42" />
+        </div>
+        <div class="statistics__item--content">
+          <span class="statistics__item--label">{{item.label}}</span>
+          <span class="statistics__item--count">{{item.count}}</span>
+          @if (item.type === 'monthly') {
+            <div class="statistics__item--average">
+              <span
+                class="statistics__item--average-number"
+                [ngClass]="{
+                  success: item.averageDirection === 'up',
+                  danger: item.averageDirection === 'down',
+                  }"
+              >
+                {{item.average}}
+              </span>
+              <span>this month</span>
+            </div>
+          } @else {
+            <div class="statistics__item--avatar">
+              @for (avatar of item.avatars; track avatar) {
+                <img
+                  class="statistics__item--avatar-item"
+                  [ngSrc]="avatar"
+                  width="26"
+                  height="26"
+                  alt="">
+              }
+            </div>
+          }
+        </div>
+      </div>
+      @if (!$last) {
+        <div class="divider"></div>
+      }
+    }
+  </div>
+</div>

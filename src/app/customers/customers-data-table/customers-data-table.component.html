@@ -1,0 +1,34 @@
+<div class="customers-datatable">
+  <table>
+    <thead>
+      <tr>
+        @for (header of headers; track header.value) {
+          <th>{{header.text}}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of data; track item.email) {
+        <tr>
+          @for (header of headers; track header.value) {
+            @if(header.value === 'status') {
+            <td >
+              <button [ngClass]="[header.value === 'status' ? item[header.value].toLowerCase() : '' ]">{{item[header.value]}}</button>
+            </td>
+            } @else {
+            <td>{{item[header.value]}}</td>
+            }
+          }
+        </tr>
+        }
+    </tbody>
+  </table>
+  <div class="customers-datatable__footer">
+    <div>
+      Showing data 1 to 8 of  256K entries
+    </div>
+    <div>
+      <app-customers-pagination />
+    </div>
+  </div>
+</div>

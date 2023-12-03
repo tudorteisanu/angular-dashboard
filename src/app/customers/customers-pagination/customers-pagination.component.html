@@ -1,0 +1,19 @@
+<div>
+  <div class="pagination">
+    <button class="page" (click)="prevPage()" [disabled]="currentPage() === 1"> < </button>
+    @for (page of pagesToDisplay(); track page) {
+      <button
+        class="page"
+        [ngClass]="{current: page === currentPage()}"
+        (click)="handleChangePage(page)"
+      >
+        {{page}}
+      </button>
+    }
+    <button
+      class="page"
+      (click)="nextPage()"
+      [disabled]="currentPage() === pages().length"
+    > > </button>
+  </div>
+</div>

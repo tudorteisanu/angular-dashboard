@@ -1,22 +1,37 @@
-<aside class="side-menu">
-  <nav>
-    <ul class="links">
-      @for (item of items; track $index) {
-        <li
-          [routerLink]="item.link"
-          routerLinkActive="selected"
-          [routerLinkActiveOptions]="{exact: true}"
-          class="links__item"
-        >
-          @if(item.icon) {
-            <lib-icon [src]="item.icon" class="links__item--icon" width="24" height="24"/>
-          }
-          <span class="links__item--text">
+<aside class="side-menu" [ngClass]="{
+hidden: !displayed()
+}">
+  <div class="side-menu__content">
+    <div class="side-menu__title">
+      <lib-icon (click)="toggle()" src="assets/icons/settings.svg"/>
+      @if(displayed()) {
+        <span class="side-menu__title--text">
+      Dashboard
+    </span>
+      }
+
+    </div>
+    <nav class="links">
+      <ul >
+        @for (item of items; track $index) {
+          <li
+            [routerLink]="item.link"
+            routerLinkActive="selected"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="links__item"
+          >
+            @if(item.icon) {
+              <lib-icon [src]="item.icon" class="links__item--icon" width="24" height="24"/>
+            }
+            @if(displayed()) {
+            <span class="links__item--text">
          {{item.text}}
       </span>
-        </li>
-      }
-    </ul>
-  </nav>
+              }
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
 </aside>
 
