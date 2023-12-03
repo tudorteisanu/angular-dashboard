@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import {DefaultLayoutComponent} from 'core';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [DefaultLayoutComponent],
+  imports: [],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })

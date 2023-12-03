@@ -8,20 +8,23 @@ import {
   ViewChild,
 } from '@angular/core';
 import {IconService} from "./icon.service";
+import {NgStyle} from "@angular/common";
 
 @Component({
   selector: 'lib-icon',
   standalone: true,
-  imports: [],
+  imports: [
+    NgStyle
+  ],
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconComponent implements AfterViewInit{
   @Input()
-    width: string = '24';
+    width: number = 24;
   @Input()
-    height: string = '24';
+    height: number = 24;
   @Input({required: true})
     src: string = '';
 
@@ -37,4 +40,12 @@ export class IconComponent implements AfterViewInit{
       }
     })
   }
+
+  get iconStyle() {
+    return {
+      width: `${this.width}px`,
+      height: `${this.height}px`
+    }
+  }
+
 }

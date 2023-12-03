@@ -3,7 +3,7 @@ hidden: !displayed()
 }">
   <div class="side-menu__content">
     <div class="side-menu__title">
-      <lib-icon (click)="toggle()" src="assets/icons/settings.svg"/>
+      <lib-icon (click)="toggle()" src="assets/icons/settings.svg" [width]="37" [height]="37"/>
       @if(displayed()) {
         <span class="side-menu__title--text">
       Dashboard
@@ -21,7 +21,7 @@ hidden: !displayed()
             class="links__item"
           >
             @if(item.icon) {
-              <lib-icon [src]="item.icon" class="links__item--icon" width="24" height="24"/>
+              <lib-icon [src]="item.icon" class="links__item--icon" [width]="24" [height]="24"/>
             }
             @if(displayed()) {
             <span class="links__item--text">

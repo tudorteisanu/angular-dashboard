@@ -1,4 +1,4 @@
-import {afterNextRender, ChangeDetectionStrategy, Component, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {NgClass, NgOptimizedImage} from "@angular/common";
 import {IconComponent} from "../icon/icon.component";
@@ -52,21 +52,7 @@ export class NavbarComponent {
     },
   ]
 
-  constructor() {
-    afterNextRender(() => {
-      const menuState = localStorage.getItem('menuState')
-
-      if (menuState) {
-        this.displayed.set(JSON.parse(menuState))
-      }
-    })
-  }
-
   toggle() {
     this.displayed.update(value => !value);
-  }
-
-  ngOnInit() {
-    console.log('init')
   }
 }
