@@ -1,12 +1,15 @@
-table {
+.table {
   width: 100%;
+  max-width: 100%;
+  overflow: auto;
 }
 
-table, tr, td {
-  border-collapse: collapse;
+.table__body {
+  max-height: 50vh;
+  overflow: auto;
 }
 
-td, th {
+.col {
   border-bottom: 1px solid #EEE;
   padding: 24px;
   text-align: left;
@@ -16,8 +19,13 @@ td, th {
   color: #292D32;
 }
 
-th {
+.col-head {
   color: #B5B7C0;
+}
+
+
+.row  {
+  display: grid;
 }
 
 .customers-datatable {

@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CustomersPaginationComponent} from "../customers-pagination/customers-pagination.component";
-import {NgClass} from "@angular/common";
+import {NgClass, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-customers-data-table',
   standalone: true,
   imports: [
     CustomersPaginationComponent,
-    NgClass
+    NgClass,
+    NgStyle
   ],
   templateUrl: './customers-data-table.component.html',
   styleUrl: './customers-data-table.component.css'
@@ -107,4 +108,9 @@ export class CustomersDataTableComponent {
 
     },
   ]
+
+  getGridStyle(ref: HTMLDivElement) {
+    ref.style.gridTemplateColumns = `repeat(${this.headers.length}, minmax(130px, 1fr))`
+    return undefined
+  }
 }

@@ -1,28 +1,26 @@
 <div class="customers-datatable">
-  <table>
-    <thead>
-      <tr>
+  <div class="table">
+      <div class="row" #row [ngStyle]="getGridStyle(row)">
         @for (header of headers; track header.value) {
-          <th>{{header.text}}</th>
+          <div class="col col-head">{{header.text}}</div>
         }
-      </tr>
-    </thead>
-    <tbody>
+      </div>
+    <div class="table__body">
       @for (item of data; track item.email) {
-        <tr>
+        <div class="row" #row [ngStyle]="getGridStyle(row)">
           @for (header of headers; track header.value) {
             @if(header.value === 'status') {
-            <td >
+            <div class="col" >
               <button [ngClass]="[header.value === 'status' ? item[header.value].toLowerCase() : '' ]">{{item[header.value]}}</button>
-            </td>
+            </div>
             } @else {
-            <td>{{item[header.value]}}</td>
+            <div class="col">{{item[header.value]}}</div>
             }
           }
-        </tr>
+        </div>
         }
-    </tbody>
-  </table>
+    </div>
+  </div>
   <div class="customers-datatable__footer">
     <div>
       Showing data 1 to 8 of  256K entries
