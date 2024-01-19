@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {IconComponent} from 'core'
 import {CommonModule, NgOptimizedImage} from "@angular/common";
+import {IconComponent} from "../../core/components/icon/icon.component";
 @Component({
   selector: 'app-customers-statistics',
   standalone: true,

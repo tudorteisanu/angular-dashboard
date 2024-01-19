@@ -4,7 +4,7 @@ import {NgClass, NgOptimizedImage} from "@angular/common";
 import {IconComponent} from "../icon/icon.component";
 
 @Component({
-  selector: 'lib-navbar',
+  selector: 'app-navbar',
   standalone: true,
   imports: [
     RouterLink,

@@ -3,7 +3,7 @@
     @for (item of statistics; track $index) {
       <div class="statistics__item">
         <div class="statistics__item__icon">
-          <lib-icon [src]="item.icon" [width]="42" [height]="42" />
+          <app-icon [src]="item.icon" [width]="42" [height]="42" />
         </div>
         <div class="statistics__item--content">
           <span class="statistics__item--label">{{item.label}}</span>

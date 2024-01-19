@@ -11,7 +11,7 @@ import {IconService} from "./icon.service";
 import {NgStyle} from "@angular/common";
 
 @Component({
-  selector: 'lib-icon',
+  selector: 'app-icon',
   standalone: true,
   imports: [
     NgStyle

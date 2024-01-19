@@ -3,7 +3,7 @@ import {NavbarComponent} from "../navbar/navbar.component";
 import {RouterOutlet} from "@angular/router";
 
 @Component({
-  selector: 'lib-default-layout',
+  selector: 'app-default-layout',
   standalone: true,
   imports: [
     NavbarComponent,

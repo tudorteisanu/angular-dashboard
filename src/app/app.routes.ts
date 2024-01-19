@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('core').then(m => m.DefaultLayoutComponent),
+    loadComponent: () => import('./core/components/default-layout/default-layout.component').then(m => m.DefaultLayoutComponent),
     children: [
       {
         path: 'customers',
